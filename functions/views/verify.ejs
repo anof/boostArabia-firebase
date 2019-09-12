@@ -1,0 +1,43 @@
+<%- include('header') %>
+
+<!-- ##### Register Area Start ##### -->
+<section class="form-text bg-img bg-pattern bg-fixed pt-5 pb-5"
+    style="background-image: url(img/bg-img/5.jpg);height: -webkit-fill-available">
+    <div class="container">
+        <div class="success_signup">
+            <h1>Confirm Your Email</h1>
+            <p>
+                Hey <%= data.displayName %>,<br />
+                In order for you to make any purchase, you must confirm your email ..<br />
+                Check your inbox email <a href=<%= data.emailWebsite %>><%= data.email%></a> for a confirmation
+                email.<br />
+            </p>
+                <p style="font-size: 40px" class="success_signup">
+                    Already Did?<br />
+                    <a href="login"><button type="button" class="btn egames-btn"><strong>Login</strong></button></a>
+                </p>
+                <div id="anotherEmail">
+                    <p style="font-size: 30px" class="success_signup">
+                        Didn't receive email?<br />
+                        <button onclick="resendVerify('<%= data.email %>','<%= data.displayName%>');" type="button"
+                            class="apex_colors btn egames-btn mt-2"><strong>Send Again</strong></button>
+                    </p>
+                </div>
+        </div>
+
+    </div>
+</section>
+<!-- ##### Register Area End ##### -->
+
+<!-- ##### Footer Area Start ##### -->
+<% include footer.ejs %>
+<!-- ##### Footer Area End ##### -->
+
+<!-- ##### All Javascript Script ##### -->
+<% include external_inc.ejs %>
+
+
+
+</body>
+
+</html>

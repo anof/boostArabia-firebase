@@ -1,0 +1,76 @@
+<%- include('header') %>
+
+<!-- ##### Register Area Start ##### -->
+<section class="form-text bg-img bg-pattern bg-fixed pt-5"
+    style="background-image: url(img/bg-img/5.jpg);height: 100%; padding-bottom: 650px">
+    <div class="container">
+        <h2 class="section-title mb-50 col-sm-7 mx-auto"><strong>Sign Up</strong></h2>
+        <% if(errors){ %>
+            <% if(errors.length>1){ %>
+                <% errors.forEach(function(error){%>
+                    <div class="alert alert-danger col-sm-6 mx-auto">
+                        <%= error.msg %>
+                    </div>
+            <% })}else{ %>
+                    <div class="alert alert-danger col-sm-6 mx-auto">
+                        <%= errors.message %>
+                    </div>
+        <% }}; %>
+        <div class="container">
+            <form  action="/register" method="POST" class=""
+                oninput='confUsrPass.setCustomValidity(confUsrPass.value != usrPass.value ? "Passwords do not match." : "")'>
+
+                <div class="form-group row col-sm-7 mx-auto">
+                    <div class="col pl-0">
+                        <label for="firstName">First Name</label>
+                        <input name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                    </div>
+
+                    <div class="col pr-0">
+                        <label for="lastName">Last Name</label>
+                        <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-7 mx-auto">
+                    <label for="email">Email address</label>
+                    <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        placeholder="Enter email" required>
+                </div>
+
+                <div class="form-group col-sm-7 mx-auto">
+                    <label for="password">Password</label>
+                    <input name="usrPass" type="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+
+                <div class="form-group col-sm-7 mx-auto">
+                    <label for="password">Confirm Password</label>
+                    <input name="confUsrPass" type="password" class="form-control" id="password" placeholder="Password"  required>
+                </div>
+
+                <br />
+
+                <div class="form-group col-sm-7 mx-auto d-flex justify-content-between align-items-center">
+                    <button id="register_button" type="submit" class="btn egames-btn">Sign Up</button>
+                    <span class="justify-self-center">OR</span>
+                    <a href="login"><button type="button" class="btn login_btn">Log in</button></a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+<!-- ##### Register Area End ##### -->
+
+<!-- ##### Footer Area Start ##### -->
+<% include footer.ejs %>
+<!-- ##### Footer Area End ##### -->
+
+<!-- ##### All Javascript Script ##### -->
+<% include external_inc.ejs %>
+
+
+
+</body>
+
+</html>
