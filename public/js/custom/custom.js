@@ -532,7 +532,19 @@ firebase.auth().onAuthStateChanged(function(user) {
       // User is signed out.
       // ...
     }
-  });
+  }); 
+
+
+
+
+function checkout()
+{
+    $(".checkout").fadeIn().removeClass("hidden");
+
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".checkout").offset().top
+    }, 1000);
+}
 
 
 

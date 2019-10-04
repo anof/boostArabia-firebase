@@ -8,6 +8,7 @@
 @import url(css/animate.css);
 @import url(css/magnific-popup.css);
 @import url(css/font-awesome.min.css);
+@import url(css/card-slider.css);
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
@@ -1651,6 +1652,7 @@ img {
 /*End fortnite Colors*/
 
 /*Overwatch Colors*/
+
 /*Form*/
 .overwatch_colors .form-select, .overwatch_colors .custom_number_slider, .overwatch_colors .egames-btn,
  .overwatch_colors .nav-tabs .nav-item .nav-link.active
@@ -2001,10 +2003,76 @@ img {
   text-align: center;
 }
 
-/* .hide-footer
+.checkout
 {
-  display: none;
-} */
+  background-color: rgb(245,245,245, 50%);
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  min-height: 800px;
+}
+
+
+.checkout-content
+{
+  background-color: #FFFFFF;
+  color: black;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-right: 33px;
+  padding: 20px;
+  border: 1px black solid;
+}
+
+.checkout-button
+{
+  background-color: #111111;
+  color: white;
+  margin-top: 15px;
+}
+
+.checkout-button:hover, .checkout-button::after, .checkout-button:active
+{
+  background-color: #292929;
+}
+
+.card
+{
+  margin-top: 25px;
+}
+
+.card-text
+{
+  min-height: 145px;
+  display: block;
+}
+
+.slider-colors
+{
+  color: #000000;
+}
+
+.btn-primary
+{
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.btn-primary:hover, .btn-primary::after, .btn-primary:active
+{
+  color: #fff;
+  background-color: #292929;
+  border-color: #292929;
+}
+
+
+
+.carousel-inner
+{
+  justify-content: center;
+}
 
 .hidden
 {
