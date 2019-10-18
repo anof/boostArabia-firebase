@@ -2023,6 +2023,7 @@ img {
   margin-right: 33px;
   padding: 20px;
   border: 1px black solid;
+  position: relative;
 }
 
 .checkout-button
@@ -2067,12 +2068,19 @@ img {
   border-color: #292929;
 }
 
-
-
 .carousel-inner
 {
   justify-content: center;
 }
+
+.exit-button
+{
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 50px;
+}
+
 
 .hidden
 {

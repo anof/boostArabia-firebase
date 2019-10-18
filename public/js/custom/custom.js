@@ -546,5 +546,13 @@ function checkout()
     }, 1000);
 }
 
+function hideCheckout()
+{
+    $(".checkout").fadeOut().addClass("hidden");
+}
+
+
+
+
 
 
