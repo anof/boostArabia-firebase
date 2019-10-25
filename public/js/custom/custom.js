@@ -7,6 +7,8 @@ storageBucket: "boostarabia-e1ecf.appspot.com",
 messagingSenderId: "593016973448",
 appId: "1:593016973448:web:28bc2a33b0df364d"
 };
+var currentBooster = null;
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -551,7 +553,21 @@ function hideCheckout()
     $(".checkout").fadeOut().addClass("hidden");
 }
 
+// On Choose Booster Click
+$('button[name="booster_choose_btn"]').on("click",function(){
+    $('button[name="booster_choose_btn"]').removeClass("booster-choosen");
+    $(this).addClass("booster-choosen");
 
+    currentBooster = $(this).attr('option')
+});
+
+function continueCheckout()
+{
+    if(!currentBooster)
+        alert("Please choose a Booster first!");
+    else
+        console.log("booster is chosen, and he is: " + currentBooster)
+}
 
 
 

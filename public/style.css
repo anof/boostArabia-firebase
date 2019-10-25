@@ -2031,6 +2031,7 @@ img {
   background-color: #111111;
   color: white;
   margin-top: 15px;
+  padding: 10px 50px 10px 50px;
 }
 
 .checkout-button:hover, .checkout-button::after, .checkout-button:active
@@ -2079,6 +2080,13 @@ img {
   left: 0;
   top: -5px;
   font-size: 50px;
+}
+
+.booster-choosen, .booster-choosen::after, .booster-choosen:hover{
+  color: white;
+  animation-name: choose_booster_btn;
+  animation-duration: 1000ms;
+  background-color: #4BB543 !important;
 }
 
 
