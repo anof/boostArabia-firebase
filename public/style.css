@@ -2039,6 +2039,19 @@ img {
   background-color: #292929;
 }
 
+.continue-checkout-button
+{
+  background-color: #111111;
+  color: white;
+  margin-top: 15px;
+  padding: 10px 30px 10px 30px;
+}
+
+.continue-checkout-button:hover, .continue-checkout-button::after, .continue-checkout-button:active
+{
+  background-color: #292929;
+}
+
 .card
 {
   margin-top: 25px;
@@ -2087,6 +2100,20 @@ img {
   animation-name: choose_booster_btn;
   animation-duration: 1000ms;
   background-color: #20d8da !important;
+}
+
+.contact-info-type-description
+{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.other-info
+{
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 

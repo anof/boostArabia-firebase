@@ -566,9 +566,55 @@ function continueCheckout()
     if(!currentBooster)
         alert("Please choose a Booster first!");
     else
-        console.log("booster is chosen, and he is: " + currentBooster)
+        $(".choose-booster").fadeOut().addClass("hidden");
+        $(".continue-checkout").fadeIn().removeClass("hidden")
 }
 
 
 
+// on contact method value change 
+
+$(".contact_info_type").change(function(){
+    let input = $("#contact-info-type-input");
+    let description = "";
+    let placeholder = ""
+            
+    switch(this.value)
+    {
+        case "WhatsApp":
+            description = "Enter WhatsApp phone number here";
+            placeholder = "Example: +962xxxxxxxxx";
+            break;
+        case "Instagram":
+            description = "Enter Instagram account username here";
+            placeholder = "Example: @boostarabia";
+            break;
+        case "Facebook Messenger":
+            description = "Enter messenger account username/phone number here"
+            placeholder = "Example: @boostarabia"
+            break;
+        case "Snapchat":
+            description = "Enter snapchat account username here"
+            placeholder = "Example: @boostarabia"
+            break;
+        case "Email":
+            description = "Enter Email address here"
+            placeholder = "Example: @boostarabia@gmail.com"
+            break;
+        default:
+            description = "Enter WhatsApp phone number here"
+            placeholder = "Example: +962xxxxxxxxx"
+            break;            
+    }
+
+    input.attr("placeholder", placeholder)
+    $(".contact-info-type-description").html(description)
+
+});
+
+
+function finishCheckout()
+{
+    alert("currently disabled")
+}
 
