@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res) => {
-  res.render('index', { title: "Home"});
+  res.render('index', { title: "Home" });
 });
 
 app.get('/contact', (req, res) => {
@@ -50,7 +50,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/reset_password', (req, res) => {
-  res.render('reset_password', { title: "Reset Password"});
+  res.render('reset_password', { title: "Reset Password" });
 });
 
 
@@ -80,7 +80,7 @@ app.get('/signout', (req, res) => {
 // verify again process
 app.post('/verifyAgain', (req, res) => {
   verifyEmail(req.body.email, req.body.displayName);
-  res.json({success: true});
+  res.json({ success: true });
 });
 
 // login process *not currently in use
@@ -128,8 +128,7 @@ app.listen(8000);
 /* --------- Functions --------- */
 
 /* SignUp */
-function createNewUser(req, res)
-{ 
+function createNewUser(req, res) {
   const email = req.body.email;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -154,8 +153,8 @@ function createNewUser(req, res)
 
       initUserDatabase(userRecord);
       verifyEmail(email, displayName);
-      let data = {logged_in: false, displayName: displayName, emailWebsite: emailWebsite, email: email}
-      res.render('verify', {title: "Verify Your Email", data: data});
+      let data = { logged_in: false, displayName: displayName, emailWebsite: emailWebsite, email: email }
+      res.render('verify', { title: "Verify Your Email", data: data });
     })
     .catch(function (error) {
       // Create User Failure
@@ -231,8 +230,8 @@ function sendVerificationLink(email, link, displayName) {
 //   firebase.auth().getUserByEmail(email).then((userRecord)=>{
 
 //     let hash = userRecord.passwordHash;
-    
-    
+
+
 //   }).catch((error)=>{
 //     // email not found
 //       console.log("email not found");

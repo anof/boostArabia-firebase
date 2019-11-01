@@ -14,7 +14,8 @@
                             <div class='container checkout hidden'>
                                 <div class="checkout-content">
                                     <div>
-                                        <button type="button" class="close exit-button" onclick="hideCheckout()" aria-label="Close">
+                                        <button type="button" class="close exit-button" onclick="hideCheckout()"
+                                            aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
@@ -25,53 +26,65 @@
                                                 <div class="carousel-inner row w-100 mx-auto">
                                                     <div class="carousel-item col-md-4 active">
                                                         <div class="card">
-                                                            <img class="card-img-top" src="./img/bg-img/header_fortnite.png"
+                                                            <img class="card-img-top"
+                                                                src="./img/bg-img/header_fortnite.png"
                                                                 alt="Card image cap">
                                                             <div class="card-body">
                                                                 <h4 class="card-title">temp1</h4>
                                                                 <p class="card-text">
                                                                     test2
                                                                 </p>
-                                                                <button name="booster_choose_btn" option="fortnite_booster_1" class="btn btn-primary">Choose</button>
+                                                                <button name="booster_choose_btn"
+                                                                    option="fortnite_booster_1"
+                                                                    class="btn btn-primary">Choose</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="carousel-item col-md-4">
                                                         <div class="card">
-                                                            <img class="card-img-top" src="./img/bg-img/header_fortnite.png"
+                                                            <img class="card-img-top"
+                                                                src="./img/bg-img/header_fortnite.png"
                                                                 alt="Card image cap">
                                                             <div class="card-body">
                                                                 <h4 class="card-title">temp2</h4>
                                                                 <p class="card-text">
                                                                     test
                                                                 </p>
-                                                                <button name="booster_choose_btn" option="fortnite_booster_2" class="btn btn-primary">Choose</button>
+                                                                <button name="booster_choose_btn"
+                                                                    option="fortnite_booster_2"
+                                                                    class="btn btn-primary">Choose</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="carousel-item col-md-4">
                                                         <div class="card">
-                                                            <img class="card-img-top" src="./img/bg-img/header_fortnite.png"
+                                                            <img class="card-img-top"
+                                                                src="./img/bg-img/header_fortnite.png"
                                                                 alt="Card image cap">
                                                             <div class="card-body">
                                                                 <h4 class="card-title">temp3</h4>
                                                                 <p class="card-text">
                                                                     test3
                                                                 </p>
-                                                                <button name="booster_choose_btn" option="fortnite_booster_3" class="btn btn-primary">Choose</button>
+                                                                <button name="booster_choose_btn"
+                                                                    option="fortnite_booster_3"
+                                                                    class="btn btn-primary">Choose</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="carousel-item col-md-4">
                                                         <div class="card">
-                                                            <img class="card-img-top" src="./img/bg-img/header_fortnite.png"
+                                                            <img class="card-img-top"
+                                                                src="./img/bg-img/header_fortnite.png"
                                                                 alt="Card image cap">
                                                             <div class="card-body">
                                                                 <h4 class="card-title">temp4</h4>
                                                                 <p class="card-text">
                                                                     test4
                                                                 </p>
-                                                                <button name="booster_choose_btn" option="fortnite_booster_4" class="btn btn-primary">Choose</button>
+                                                                <button name="booster_choose_btn"
+                                                                    option="fortnite_booster_4"
+                                                                    class="btn btn-primary">Choose</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -92,42 +105,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button onclick="continueCheckout();" class="btn checkout-button">Continue</button>
+                                        <button onclick="continueCheckout();"
+                                            class="btn checkout-button">Continue</button>
                                     </div>
-                                    <div class="continue-checkout hidden">
-                                            <div class="checkout-contact-info">
-                                                <h2>Contact Info</h2>
-                                                <hr/>
-                                                <h5>Please select a way for the BOOSTER to connect with you</h5>
-                                                <select class="form-control contact_info_type">
-                                                    <option value="WhatsApp">WhatsApp</option>
-                                                    <option value="Instagram">Instagram</option>
-                                                    <option value="Facebook Messenger">Facebook Messenger</option>
-                                                    <option value="Snapchat">Snapchat</option>
-                                                    <option value="Email">Email</option>
-                                                </select>
-                                                <div class="continue-checkout-component">
-                                                    <div class="contact-info-type-description">
-                                                        Enter WhatsApp phone number here
-                                                    </div>
-                                                    
-                                                    
-                                                    <input id="contact-info-type-input" class="form-control col" type="text" size="20"
-                                                    placeholder="Example: +962xxxxxxxxx" />
-                                                </div>
-    
-                                                <div class="continue-checkout-component other-info">
-                                                    Other informaton for the booster
-                                                    
-                                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10">
-                                                    </textarea>
-                                                </div>
-    
-                                                <div class="continue-checkout-component">
-                                                    <button onclick="finishCheckout();" class="btn continue-checkout-button">Checkout With Paypal</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <%- include('continue_checkout') %>
                                 </div>
 
                             </div>
