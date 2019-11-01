@@ -2087,6 +2087,12 @@ img {
   justify-content: center;
 }
 
+.card-body
+{
+  justify-content: center;
+  text-align: center;
+}
+
 .exit-button
 {
   position: absolute;
@@ -2117,9 +2123,29 @@ img {
 }
 
 
+.famous-boosters
+{
+  color: white !important;
+  text-align: center;
+  align-content: center;
+  display: block;
+}
+
+.famous-booster{
+  width: 60%;
+  position: relative;
+  left: 20%
+}
+
+
+.booster{
+  color: black;
+  max-width: 50%;
+} 
+
 .hidden
 {
-  display: none;
+  display: none !important;
 }
 
 html,body

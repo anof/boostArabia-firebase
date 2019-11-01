@@ -563,11 +563,14 @@ $('button[name="booster_choose_btn"]').on("click",function(){
 
 function continueCheckout()
 {
-    if(!currentBooster)
-        alert("Please choose a Booster first!");
-    else
+    if(currentBooster)
+    {
         $(".choose-booster").fadeOut().addClass("hidden");
         $(".continue-checkout").fadeIn().removeClass("hidden")
+    }
+    else
+        alert("Please choose a Booster first!");
+        
 }
 
 
