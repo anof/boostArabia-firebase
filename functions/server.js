@@ -13,8 +13,6 @@ firebase.initializeApp({
   databaseURL: "https://boostarabia-e1ecf.firebaseio.com"
 });
 
-
-
 const db = firebase.firestore();
 
 // bodyParser middleware
@@ -247,7 +245,4 @@ function sendVerificationLink(email, link, displayName) {
 //   return req;
 // }
 
-exports.app = functions.region('europe-west2').https.onRequest(app)
-
-
-
+exports.app = functions.https.onRequest(app);
