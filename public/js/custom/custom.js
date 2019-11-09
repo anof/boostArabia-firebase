@@ -529,13 +529,15 @@ function continueCheckout() {
     if (currentBooster) {
         $(".choose-booster").fadeOut().addClass("hidden");
         $(".continue-checkout").fadeIn().removeClass("hidden")
+        // a hack to be changed later
+        $("#boost_container").height(1450);
     }
     else
         alert("Please choose a Booster first!");
 
+
+
 }
-
-
 
 // on contact method value change 
 
@@ -576,4 +578,3 @@ $(".contact_info_type").change(function () {
 function finishCheckout() {
     alert("currently disabled")
 }
-
