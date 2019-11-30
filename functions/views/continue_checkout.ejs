@@ -1,32 +1,38 @@
 <div class="continue-checkout hidden">
     <div class="checkout-contact-info">
-        <h2>Contact Info</h2>
-        <hr/>
-        <h5>Please select a way for the BOOSTER to connect with you</h5>
-        <select class="form-control contact_info_type">
-            <option value="WhatsApp">WhatsApp</option>
-            <option value="Instagram">Instagram</option>
-            <option value="Facebook Messenger">Facebook Messenger</option>
-            <option value="Email">Email</option>
-        </select>
-        <div class="continue-checkout-component">
-            <div class="contact-info-type-description">
-                Enter WhatsApp phone number here
+            <form id="contanct-info-form">
+            <h2>Contact Info</h2>
+            <hr/>
+            <h5>Please select a way for the BOOSTER to connect with you</h5>
+            <select class="form-control contact_info_type">
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Facebook Messenger">Facebook Messenger</option>
+                <option value="Email">Email</option>
+            </select>
+            <div class="continue-checkout-component">
+                <div class="contact-info-type-description">
+                    Enter WhatsApp phone number here
+                </div>
+                
+                
+                <input required id="contact-info-type-input" class="form-control col" type="text" size="20"
+                placeholder="Example: +962xxxxxxxxx" />
             </div>
-            
-            
-            <input id="contact-info-type-input" class="form-control col" type="text" size="20"
-            placeholder="Example: +962xxxxxxxxx" />
-        </div>
 
-        <div class="continue-checkout-component other-info">
-            Other informaton for the booster
-            
-            <textarea name="message" class="form-control" id="message" cols="30" rows="5"></textarea>
-        </div>
+            <div class="continue-checkout-component other-info">
+                Other informaton for the booster
+                
+                <textarea name="message" class="form-control" id="message" cols="30" rows="5"></textarea>
+            </div>
 
-        <div class="continue-checkout-component">
-            <div id="paypal-button-container"></div>
-        </div>
+            <div class="continue-checkout-component">
+                <button onclick="checkoutUsingPaypal();" class="btn checkout-button checkout-using-paypal-btn">
+                    Checkout Using Paypal
+                </button>
+
+                <div id="paypal-button-container" class="hidden"></div>
+            </div>
+        </form>
     </div>
 </div>

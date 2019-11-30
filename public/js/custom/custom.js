@@ -427,6 +427,9 @@ function preventFormDefault() {
     $("#reset_form").submit(function (e) {
         e.preventDefault();
     });
+    $("#contanct-info-form").submit(function (e) {
+        e.preventDefault();
+    });
 }
 
 // signout
@@ -534,9 +537,21 @@ function continueCheckout() {
     }
     else
         alert("Please choose a Booster first!");
+}
 
-
-
+function checkoutUsingPaypal(){
+    preventFormDefault();
+    let val = $("#contact-info-type-input").val()
+    if(val.trim() != "")
+    {
+        $("#contact-info-type-input").removeClass("error-border")   
+        $(".checkout-using-paypal-btn").addClass("hidden")
+        $("#paypal-button-container").removeClass("hidden")
+    }
+    else
+    {
+        $("#contact-info-type-input").addClass("error-border")   
+    }
 }
 
 // on contact method value change 
@@ -573,8 +588,3 @@ $(".contact_info_type").change(function () {
     $(".contact-info-type-description").html(description)
 
 });
-
-
-function finishCheckout() {
-    alert("currently disabled")
-}
