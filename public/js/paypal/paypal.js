@@ -1,9 +1,11 @@
+
 paypal.Buttons({
     createOrder: function (data, actions) {
+        price = $("#price").html()
         return actions.order.create({
             purchase_units: [{
                 amount: {
-                    value: '1.00'
+                    value: price
                 }
             }]
         });
