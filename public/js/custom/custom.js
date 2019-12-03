@@ -256,7 +256,7 @@ function fort_arena_price(valueC, valueD, queue) {
             price = 0;
     }
 
-    return parseFloat(price * parseInt(queue)).toFixed(2);
+    return parseFloat(price).toFixed(2);
 }
 /* End Fortnite Prices */
 
@@ -542,16 +542,21 @@ function continueCheckout() {
 function checkoutUsingPaypal(){
     preventFormDefault();
     let val = $("#contact-info-type-input").val()
-    if(val.trim() != "")
-    {
-        $("#contact-info-type-input").removeClass("error-border")   
-        $(".checkout-using-paypal-btn").addClass("hidden")
-        $("#paypal-button-container").removeClass("hidden")
-    }
-    else
-    {
-        $("#contact-info-type-input").addClass("error-border")   
-    }
+    // if(val.trim() != "")
+    // {
+    //     $("#contact-info-type-input").removeClass("error-border")   
+    //     $(".checkout-using-paypal-btn").addClass("hidden")
+    //     $("#paypal-button-container").removeClass("hidden")
+    // }
+    // else
+    // {
+    //     $("#contact-info-type-input").addClass("error-border")   
+    // }
+    let number = $("#contact-info-type-input").val()
+    let contact_type = $("#contact_info_type").val()
+    // console.log(currentBooster)
+    let active_tab = $("a[aria-selected='true']").attr("id")
+    let follower = $("div[aria-labelledby='challenges-tab']")
 }
 
 // on contact method value change 
@@ -588,3 +593,21 @@ $(".contact_info_type").change(function () {
     $(".contact-info-type-description").html(description)
 
 });
+
+
+// //---------- all needed values ---------
+// window.setInterval(function(){
+
+// let contact_type = $("#contact_info_type").val()
+// // console.log(currentBooster)
+// let active_tab_name = $("a[aria-selected='true']").attr("id")
+// let active_selection_names = $("div[aria-labelledby='"+active_tab_name+"'] label")
+// active_selection_names.each(function(){
+//     // console.log($(this).html())
+// })  
+// let active_selection_values = $("div[aria-labelledby='"+active_tab_name+"'] :input")
+// active_selection_values.each(function(){
+//     // console.log($(this).val())
+// })
+
+//   }, 1000);
