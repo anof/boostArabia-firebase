@@ -6,7 +6,7 @@ function get_needed_values() {
     let purchase_details_values = []
     let contact_type = $("#contact_info_type").val()
     let contact_type_input = $('#contact-info-type-input').val()
-    let additional_info = $('#contact-additional-info').html()
+    let additional_info = $('#contact-additional-info').val()
     let active_tab_name = $("a[aria-selected='true']").attr("id")
     let active_selection_names = $("div[aria-labelledby='" + active_tab_name + "'] label")
 
