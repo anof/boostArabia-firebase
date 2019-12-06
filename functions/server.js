@@ -141,17 +141,23 @@ app.post('/paypal-transaction-complete', async (req, res) => {
   }
 
   // 5. Validate the transaction details are as expected
-  // if (order.result.purchase_units[0].amount.value !== '220.00') {
-  //   return res.send(400);
-  // }
-
-
+  // purchase details
+  // console.log("now details")
+  // console.log(req.body.purchase_details)
+  // console.log("now booster")
+  // console.log(req.body.booster)
+  // looping through details
+  // let keys = req.body.purchase_details
+  //   for (let key in keys)
+  //       console.log(key + " " + keys[key])
 
   // 6. Save the transaction in your database
   // await database.saveTransaction(orderID);
   // console.log(order.result.payer.email_address) // how to get buyer email
 
-  // 7. Return a successful response to the client
+  // 7 Send purchase details to booster and owners
+
+  // 8. Return a successful response to the client
   return res.send(200);
 });
 
