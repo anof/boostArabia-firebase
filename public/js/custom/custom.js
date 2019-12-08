@@ -146,18 +146,21 @@ $(document).ready(function () {
         var $seasonRank = $("#overwatch_prev_rank");
         // on click price
         $("#placement-tab").on("click", function () {
-            price = overwatch_placement_price($placementInput.val(), $seasonRank.val());
+            let $seasonRankOption = $("#overwatch_prev_rank option:selected");
+            price = overwatch_placement_price($placementInput.val(), $seasonRankOption.attr("rank_value"));
             $("#price").html(price);
         });
 
         //on change price
         $($placementInput).on("change", function () {
-            price = overwatch_placement_price($placementInput.val(), $seasonRank.val());
+            let $seasonRankOption = $("#overwatch_prev_rank option:selected");
+            price = overwatch_placement_price($placementInput.val(), $seasonRankOption.attr("rank_value"));
             $("#price").html(price);
         });
 
         $($seasonRank).on("change", function () {
-            price = overwatch_placement_price($placementInput.val(), $seasonRank.val());
+            let $seasonRankOption = $("#overwatch_prev_rank option:selected");
+            price = overwatch_placement_price($placementInput.val(), $seasonRankOption.attr("rank_value"));
             $("#price").html(price);
         });
 

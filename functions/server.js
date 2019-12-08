@@ -151,9 +151,23 @@ app.post('/paypal-transaction-complete', async (req, res) => {
   //   for (let key in keys)
   //       console.log(key + " " + keys[key])
 
+  purchase_details = req.body.purchase_details;
+  booster = req.body.booster;
+  game_name = req.body.game_name;
+  buyer_paypal_email = order.result.payer.email_address;
+
   // 6. Save the transaction in your database
-  // await database.saveTransaction(orderID);
-  // console.log(order.result.payer.email_address) // how to get buyer email
+  let addDoc = db.collection('purchases').add({
+    purchase_details: purchase_details,
+    buyer_paypal_email: buyer_paypal_email,
+    booster: booster,
+    game_name: game_name,
+  }).then(ref => {
+    console.log('Added document with ID: ', ref.id, "with purchase info: ",
+     purchase_details, "\nemail: ", buyer_paypal_email, "\nbooster: ", booster, "\ngame: ", game_name);
+  }).catch((error) => {
+    console.log("Error document not saved to database, reason: " + error)
+  });
 
   // 7 Send purchase details to booster and owners
 
