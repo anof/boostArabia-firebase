@@ -4,7 +4,7 @@ function get_needed_values() {
     // get all needed values
     let purchase_details_names = []
     let purchase_details_values = []
-    
+
     let contact_type = $("#contact_info_type").val()
     let contact_type_input = $('#contact-info-type-input').val()
     let additional_info = $('#contact-additional-info').val()
@@ -37,38 +37,42 @@ function get_needed_values() {
     return purchase_details
 }
 
-
-paypal.Buttons({
-    createOrder: function (data, actions) {
-        let price = $("#price").html()
-        return actions.order.create({
-            purchase_units: [{
-                amount: {
-                    value: price
-                }
-            }]
-        });
-    },
-    onApprove: function (data, actions) {
-        return actions.order.capture().then(function (details) {
-            alert('Transaction completed by ' + details.payer.name.given_name);
-            let purchase_details = get_needed_values()
-            let booster = currentBooster
-            let game_name = $(".boost_form").attr("gameName")
-            // Call your server to save the transaction
-            return fetch('/paypal-transaction-complete', {
-                method: 'post',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    orderID: data.orderID,
-                    // sending purchase details
-                    purchase_details: purchase_details,
-                    booster: booster,
-                    game_name: game_name
-                })
+// checks if paypal button exists in page
+if ($("#paypal-button-container").length) {
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            let price = $("#price").html()
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: price
+                    }
+                }]
             });
-        });
-    }
-}).render('#paypal-button-container');
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                let purchase_details = get_needed_values()
+                let booster = currentBooster
+                let game_name = $(".boost_form").attr("gameName")
+                // Call your server to save the transaction
+                fetch('/paypal-transaction-complete', {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        orderID: data.orderID,
+                        // sending purchase details
+                        purchase_details: purchase_details,
+                        booster: booster,
+                        game_name: game_name
+                    })
+                }).then(()=>{
+                    console.log("working")
+                    window.location.replace("purchase_complete")
+                });
+            });
+        }
+    }).render('#paypal-button-container');
+}

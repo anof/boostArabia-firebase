@@ -27,7 +27,6 @@ app.set('view engine', 'ejs');
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.get('/', (req, res) => {
   res.render('index', { title: "Home" });
 });
@@ -68,6 +67,10 @@ app.get('/logout', (req, res) => {
 
 app.get('/signout', (req, res) => {
   res.render('signout', { title: "signout" });
+});
+
+app.get('/purchase_complete', (req, res) => {
+  res.render('purchase_complete', { title: "Purchase Complete" });
 });
 
 // app.get('/register_success', (req, res) => {
